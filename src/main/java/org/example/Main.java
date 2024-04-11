@@ -14,17 +14,12 @@ public class Main {
 
             switch (opcionElegida){
                 case "Coches":
-                    // Obtener el coche seleccionado
                     String[] opcionesCoches = new String[taller.getCoches().size()];
                     for (int i = 0; i < taller.getCoches().size(); i++) {
                         opcionesCoches[i] = taller.getCoches().get(i).getMarcaYModelo();
                     }
                     int indiceCocheSeleccionado = JOptionPane.showOptionDialog(null, "Maestro, estos son los coches que hay en el taller.", "Selección de bólido supremo", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcionesCoches, opcionesCoches[0]);
-
-                    // Obtener el coche seleccionado
                     Coche cocheSeleccionado = taller.getCoches().get(indiceCocheSeleccionado);
-
-                    // Llamar al método reparar del taller con el coche seleccionado
                     taller.reparar(cocheSeleccionado);
                     break;
                 case "Motos":

@@ -78,27 +78,14 @@ public class Taller {
 
     // métodos reparar
     public void reparar(Coche coche) {
-        // Obtener la lista de piezas del coche
         ArrayList<String> piezas = coche.getPiezas();
-
-        // Convertir la lista de piezas a un arreglo de strings
         String[] opcionesPiezas = piezas.toArray(new String[0]);
-
-        // Mostrar un cuadro de diálogo para seleccionar la pieza a reparar
         int indicePiezaSeleccionada = JOptionPane.showOptionDialog(null, "¿A qué pieza del " + coche.getMarcaYModelo() + " hay que hacerle un apaño?", "Reparaciones de las wapas", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcionesPiezas, opcionesPiezas[0]);
-
-        // Obtener la pieza seleccionada
         String piezaSeleccionada = piezas.get(indicePiezaSeleccionada);
-
-        // Mostrar un mensaje de confirmación
         JOptionPane.showMessageDialog(null, "La pieza " + piezaSeleccionada + " del coche " + coche.getMarcaYModelo() + " acaba de quedar flamísima.", "A mandar jefe, ¿que toca?", JOptionPane.INFORMATION_MESSAGE);
-
         String[] opcionesFinales = {"Seguir", "Salir"};
-
         int indiceopcionFinal = JOptionPane.showOptionDialog(null,"¿Quieres seguir dando el callo o cerramos el chiringuito?","Seguimos levantando el país o lo dejamos por hoy",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,opcionesFinales,opcionesFinales[0]);
-
         String opcionFinal = opcionesFinales[indiceopcionFinal];
-
         switch (opcionFinal) {
             case "Seguir":
                 break;
